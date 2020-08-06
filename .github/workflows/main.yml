@@ -18,19 +18,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
 
     # Runs a set of commands using the runners shell
     - name: Generate static files
       run: |
-        pwd
         yarn install
         yarn docs:build
 
-    - name: Work directory
-      run: pwd
+    - name: Git push
+      run:  |
+        cd docs/.vuepress/dist
+        git init
+        git add -A
+        git commit -m 'deploy'
+        git push -f https://github.com/if-ls/mooc.git master:gh-pages
 
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
