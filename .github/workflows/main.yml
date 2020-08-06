@@ -30,8 +30,6 @@ jobs:
       run:  |
         cd docs/.vuepress/dist
         git init
-        git config --global user.name "Wang Quanfeng"
-        git config --global user.email "wquanfeng@gmail.com"
         git add -A
         git commit -m 'deploy'
         git push -f ${{ secrets.GH_PAGES }}
