@@ -22,7 +22,10 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Generate static files
-      run: npm run docs:build
+      run: |
+        pwd
+        yarn install
+        yarn docs:build
 
     - name: Work directory
       run: pwd
