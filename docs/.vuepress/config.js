@@ -3,7 +3,12 @@ module.exports = {
     title: 'MOOC',
     description: '致力于为每种语言只提供一条最优的学习教程！',
     plugins: [
-        '@vuepress/back-to-top'
+        '@vuepress/back-to-top',
+        ['@vuepress/last-updated', {
+            dateOptions:{
+                hour12: false,
+            }
+        }]
     ],
     markdown: {
         lineNumbers: true
@@ -76,7 +81,9 @@ module.exports = {
         searchMaxSuggestions: 10,
         lastUpdated: '上次更新', 
         repo: 'if-ls/mooc',
+        docsDir: 'docs',
+        editLinks: true,
+        editLinkText: '在 GitHub 上编辑此页',
         smoothScroll: true,
-
     }
 }
