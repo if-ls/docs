@@ -30,7 +30,7 @@ jobs:
       run:  |
         cd docs/.vuepress/dist
         git init
-        git config --global user.name "Wang Quanfeng"
+        git config --global user.name "wquanfeng"
         git config --global user.email "wquanfeng@gmail.com"
         git add -A
         git commit -m 'deploy'
