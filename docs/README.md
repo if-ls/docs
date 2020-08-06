@@ -7,3 +7,5 @@ home: true
 :::
 
 `https://wquanfeng:shijing72@github.com/if-ls/mooc.git master:gh-pages`
+
+- 添加缓存

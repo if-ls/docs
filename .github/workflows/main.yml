@@ -20,16 +20,27 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
 
+    # Add cache
+    - uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
     # Runs a set of commands using the runners shell
-    - name: Generate static files
+    - name: BUILD
       run: |
         yarn install
         yarn docs:build
 
-    - name: Git push
+    - name: DEPLOY
       run:  |
         cd docs/.vuepress/dist
         git init
+        git config --global user.name "Wang Quanfeng"
+        git config --global user.email "wquanfeng@gmail.com"
         git add -A
         git commit -m 'deploy'
         git push -f ${{ secrets.GH_PAGES }}
