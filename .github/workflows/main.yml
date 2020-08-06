@@ -34,5 +34,5 @@ jobs:
         git config --global user.email "wquanfeng@gmail.com"
         git add -A
         git commit -m 'deploy'
-        git push -f https://wquanfeng:shijing72@github.com/if-ls/mooc.git master:gh-pages
+        git push -f ${{ secrets.GH_PAGES }}
 
