@@ -37,5 +37,5 @@ tags:
 ## 动画
 > 创建一个空标签
 ``` html
-<br />
+<Vssue class="theme-default-content content__default" style="padding: 2rem 0" />
 ```
