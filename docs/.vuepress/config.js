@@ -10,15 +10,7 @@ module.exports = {
         '@vuepress/back-to-top': {},
         '@vuepress/last-updated': {
             dateOptions:{ hour12: false }
-        },
-        '@vssue/vuepress-plugin-vssue': {
-            platform: 'github',      
-            owner: 'if-ls',
-            repo: 'mooc',
-            clientId: '9ac76b618be8e5ff4ee6',
-            clientSecret: '380d37726403e506b8daa8809d4899ec6ad36407',
-            autoCreateIssue: true,
-        },
+        }
     },
     markdown: {
         lineNumbers: true
