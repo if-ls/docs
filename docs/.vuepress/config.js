@@ -1,4 +1,5 @@
 module.exports = {
+    base: '/mooc/',
     locales: {
         '/': {
           lang: 'zh-CN',
